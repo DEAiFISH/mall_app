@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "dark",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "二手游戏卡带交易商城",
+  "usingComponents": {
+    "prod": "/components/production/production"
+  }
+}

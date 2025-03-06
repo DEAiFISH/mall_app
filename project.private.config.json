@@ -1,0 +1,9 @@
+{
+  "description": " ",
+  "projectname": "%E4%BA%8C%E6%89%8B%E6%B8%B8%E6%88%8F%E5%8D%A1%E5%B8%A6%E4%BA%A4%E6%98%93%E5%95%86%E5%9F%8E",
+  "libVersion": "2.23.2",
+  "setting": {
+    "compileHotReLoad": true,
+    "urlCheck": false
+  }
+}

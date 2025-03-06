@@ -1,0 +1,18 @@
+    <view class='prod-items' bindtap='toProdPage' data-prodid="{{item.productId}}" >
+      <view class='hot-imagecont'>
+        <image src='{{item.coverPicture}}' class='hotsaleimg' ></image>
+      </view>
+      <view class='hot-text'>
+        <view class='hotprod-text'>{{item.name || item.productName}}</view>
+        <view class='cate-prod-info' wx:if='{{item.classifyName != null}}'>{{item.classifyName}}-{{item.brandName}}</view>
+        <view class='prod-text-info'>
+          <view class='price' wx:if='{{item.price != null}}'>
+            <text class='symbol'>￥</text>
+            <text class='big-num' wx:if="{{item.preferentialPrice}}">{{item.preferentialPrice}}</text>
+            <text class='big-num' wx:else>{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+<wxs module="wxs" src="../../wxs/number.wxs" />

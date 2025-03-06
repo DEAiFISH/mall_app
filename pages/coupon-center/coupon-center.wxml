@@ -1,0 +1,8 @@
+<!--pages/coupon-center/coupon-center.wxml-->
+<view class="container">
+  <view class="voucher-list">
+    <block wx:for="{{voucherList}}" wx:key="voucherId">
+      <coupon item="{{item}}" canUse="{{item.status === 1}}"></coupon>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,61 @@
+/* pages/signUp/signUp.wxss */
+
+.container {
+  padding: 20rpx;
+  background-color: #f9f9f9; /* 背景颜色 */
+  height: 100%;
+}
+
+.form {
+  background: #fff; /* 表单背景 */
+  border-radius: 8rpx; /* 圆角 */
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1); /* 阴影效果 */
+  padding: 30rpx; /* 内边距 */
+  margin-top: 100rpx; /* 顶部间距，避免与搜索栏重叠 */
+}
+
+.form-item {
+  margin-bottom: 20rpx; /* 项目之间的间距 */
+}
+
+.label {
+  font-size: 28rpx; /* 标签字体大小 */
+  color: #333; /* 标签字体颜色 */
+  margin-bottom: 10rpx; /* 标签与输入框之间的间距 */
+}
+
+input {
+  width: 100%; /* 输入框宽度 */
+  padding: 10rpx; /* 输入框内边距 */
+  border: 1rpx solid #e1e1e1; /* 边框 */
+  border-radius: 5rpx; /* 圆角 */
+  font-size: 26rpx; /* 输入框字体大小 */
+}
+
+input::placeholder {
+  color: #999; /* 占位符颜色 */
+}
+
+.submit-btn {
+  width: 100%; /* 按钮宽度 */
+  padding: 12rpx; /* 按钮内边距 */
+  background-color: #eb2444; /* 按钮背景颜色 */
+  color: #fff; /* 按钮字体颜色 */
+  border: none; /* 去掉边框 */
+  border-radius: 5rpx; /* 圆角 */
+  font-size: 28rpx; /* 按钮字体大小 */
+  cursor: pointer; /* 鼠标指针 */
+}
+
+.submit-btn:hover {
+  background-color: #d91e3a; /* 悬停时的背景颜色 */
+}
+
+/* 添加一些额外的样式以匹配登录页面 */
+.form-item input {
+  margin-top: 5rpx; /* 输入框与标签之间的间距 */
+}
+
+.submit-btn {
+  margin-top: 20rpx; /* 按钮与输入框之间的间距 */
+}

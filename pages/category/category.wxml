@@ -1,0 +1,57 @@
+<!--pages/category/category.wxml-->
+
+<view class="container">
+
+
+<!-- 头部搜索区 -->
+
+  <view class='search-bar'>
+    <view class='search-box' bindtap='toSearchPage'>
+      <image src='../../images/icon/search.png' class='search-img'></image>
+      <text class='sear-input'>搜索您想要的商品</text>
+    </view>
+  </view>
+<!-- 滚动内容区 -->
+  <view class="main">
+    <!-- 左侧菜单start -->
+    <scroll-view scroll-y="true" class='leftmenu'>
+      <block wx:for='{{ categoryList }}' wx:key='classifyId'>
+        <view class='menu-item {{selIndex==index?"active":""}}' data-index="{{index}}" data-id="{{item.classifyId}}" bindtap='onMenuTab'>
+          <image src="{{item.icon}}" class="category-icon"></image>
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </scroll-view>
+    <!-- 左侧菜单end -->
+
+    <!-- 右侧内容start -->
+    <scroll-view scroll-y="true" class='rightcontent'>
+      <view class='adver-map'>
+        <view class='item-a'>
+          <image src='{{categoryImg}}' mode='widthFix'></image>
+        </view>
+      </view>
+      <view class='cont-item'>
+        <block wx:for='{{productList}}' wx:key='productId'>
+          <view class='show-item' bindtap='toProdPage' data-prodid="{{item.productId}}">
+            <view class='more-prod-pic'>
+              <image src='{{item.coverPicture}}' class='more-pic' mode='widthFix'></image>
+            </view>
+            <view class='prod-text-right'>
+              <view class='prod-text more'>{{item.name}}</view>
+              <view class='cate-prod-info brief-description'>{{item.briefDescription}}</view>
+              <view class='prod-price more'>
+                <text class='symbol'>￥</text>
+                <text class='big-num' wx:if="{{item.preferentialPrice}}">{{item.preferentialPrice}}</text>
+                <text class='big-num' wx:else>{{item.price}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+    <!-- 右侧内容end -->
+  </view>
+
+</view>
+<wxs module="wxs" src="../../wxs/number.wxs" />

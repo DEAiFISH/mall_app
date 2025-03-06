@@ -1,0 +1,21 @@
+<!--pages/history/history.wxml-->
+<!-- <text>pages/history/history.wxml</text> -->
+
+<view class='container'>
+    <!-- <view class='line-fix'></view>
+    <view class='tit-background'></view> -->
+    <view>
+      <block wx:for="{{historyList}}" wx:key="historyId">
+        <view class="prod-item" bindtap="toProdPage" data-prodid="{{item.productId}}">
+          <image class="prod-image" src="{{item.picture}}" alt="{{item.productName}}"></image>
+          <view class="prod-info">
+            <text class="prod-name">{{item.productName}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  
+    <view wx:if="{{!historyList.length}}" class="empty-list">
+      暂无浏览历史
+    </view>
+  </view>

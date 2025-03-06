@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "prod": "/components/production/production"
+  },
+  "onReachBottomDistance": 0,
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "我的收藏",
+  "navigationBarTextStyle": "black"
+}

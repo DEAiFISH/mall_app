@@ -1,0 +1,41 @@
+/* pages/coupon-center/coupon-center.wxss */
+
+.container {
+  padding: 20rpx;
+  background-color: #f4f4f4;
+}
+
+.voucher-list {
+  margin-top: 10rpx;
+}
+
+.voucher-item {
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 15rpx;
+  margin-bottom: 10rpx;
+  box-shadow: 0 2rpx 5rpx rgba(0, 0, 0, 0.1);
+}
+
+.voucher-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.voucher-description {
+  font-size: 24rpx;
+  color: #666;
+  margin: 5rpx 0;
+}
+
+.voucher-price {
+  font-size: 26rpx;
+  color: #eb2444;
+  margin: 5rpx 0;
+}
+
+.voucher-status {
+  font-size: 22rpx;
+  color: #999;
+}

@@ -1,0 +1,24 @@
+<view class="coupon-item {{canUse?'':'gray'}}">
+  <view class='left'>
+    <view class="num">
+      ￥<text class="coupon-price">{{item.price}}</text>
+    </view>
+    <view class='condition'>
+      {{item.name}}
+    </view>
+  </view>
+  <view class='right'>
+    <view class="c-des">
+      <text class="c-type">限时</text> 全场通用
+    </view>
+    <view class="c-date">
+      <text class="c-data-info">剩余数量：{{item.amount}}</text>
+      <text class="c-btn" bindtap='receiveCoupon' data-voucherid="{{item.voucherId}}">立即领取</text>
+    </view>
+    <view wx:if="{{order && canUse}}" class="sel-btn">
+      <checkbox color="#eb2444" data-couponid="{{item.couponId}}" checked="{{item.choose}}" bindtap="checkCoupon"></checkbox>
+    </view>
+  </view>
+  <image class="tag-img" src="../../images/icon/coupon-used.png" wx:if="{{type==1}}"></image>
+  <image class="tag-img" src="../../images/icon/coupon-ot.png" wx:if="{{type==2}}"></image>
+</view>

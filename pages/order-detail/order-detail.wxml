@@ -1,0 +1,96 @@
+<!--pages/order-detail/order-detail.wxml-->
+
+<view class='container'>
+
+  <view class='order-detail'>
+    <view class='addr'>{{address}}</view>
+  </view>
+
+  <!-- 订单信息 -->
+  <view class='order-msg'>
+    <view class='msg-item'>
+      <view class='item'>
+        <text class='item-tit'>订单流水号：</text>
+        <text class='item-txt'>{{number}}</text>
+        <text class='copy-btn' bindtap='copyBtn'>复制</text>
+      </view>
+      <view class='item'>
+        <text class='item-tit'>下单时间：</text>
+        <text class='item-txt'>{{createTime}}</text>
+      </view>
+      <view class='item' wx:if="{{payTime}}">
+        <text class='item-tit'>支付时间：</text>
+        <text class='item-txt' >{{payTime}}</text>
+      </view>
+      <view class='item' wx:if="{{shipTime}}">
+        <text class='item-tit'>发货时间：</text>
+        <text class='item-txt' >{{shipTime}}</text>
+      </view>
+      <view class='item' wx:if="{{finishTime}}">
+        <text class='item-tit'>完成时间：</text>
+        <text class='item-txt' >{{finishTime}}</text>
+      </view>
+    </view>
+    <view class='msg-item'>
+      <view class='item' wx:if="{{isPay}}">
+        <text class='item-tit'>支付方式：</text>
+        <text class='item-txt' >{{paymentMethod === 0 ? '支付宝支付' : '微信支付'}}</text>
+      </view>
+      <view class='item' wx:if="{{expressNumber}}">
+        <text class='item-tit'>配送方式：</text>
+        <text class='item-txt'>普通配送</text>
+      </view>
+      <view class='item' wx:if="{{expressNumber}}">
+        <text class='item-tit'>快递单号：</text>
+        <text class='item-txt' >{{expressNumber}}</text>
+      </view>
+      <view class='item'>
+        <text class='item-tit'>订单备注：</text>
+        <text class='item-txt'>{{memo}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='order-msg'>
+    <view class='msg-item'>
+      <view class='item'>
+        <view class='item-tit'>订单总额：</view>
+        <view class='item-txt price'>
+          <text class='symbol'>￥</text>
+          <text class='big-num'>{{money}}</text>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='item-tit'>商品数量：</view>
+        <view class='item-txt price'>
+          <text class='big-num'>{{amount}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 失败原因和取消原因展示 -->
+  <view wx:if="{{status === '失败'}}" class='order-msg'>
+    <view class='msg-item'>
+      <view class='item'>
+        <text class='item-tit'>取消原因：</text>
+        <text class='item-txt'>{{cancelReason}}</text>
+      </view>
+      <view class='item'>
+        <text class='item-tit'>取消时间：</text>
+        <text class='item-txt'>{{cancelTime}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部栏 -->
+  <view class='order-detail-footer'>
+    <button class='dele-order' wx:if="{{status === '待评价'}}" bindtap="onEvaluate">评价商品</button>
+    <button class='dele-order' wx:if="{{status === '待收货'}}" bindtap="onReceive">确认收货</button>
+    <button class='dele-order' wx:if="{{status === '待支付'}}" bindtap="onPayOrder">支付订单</button>
+    <button class='dele-order' wx:if="{{status === '待支付'}}" bindtap="onCancelOrder">取消订单</button>
+    <button class='dele-order' wx:if="{{status === '失败' || status === '完成'}}" bindtap="onDeleteOrder">删除订单</button>
+  </view>
+
+</view>
+<wxs module="wxs" src="../../wxs/number.wxs" />

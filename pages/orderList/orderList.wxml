@@ -1,0 +1,47 @@
+<!--pages/orderList/orderList.wxml-->
+
+<view class='container'>
+  <!-- 头部菜单 -->
+  <view class='order-tit'>
+    <text bindtap='onStsTap' data-sts="0" class="{{sts==0?'on':''}}">全部</text>
+    <text bindtap='onStsTap' data-sts="1" class="{{sts==1?'on':''}}">待支付</text>
+    <text bindtap='onStsTap' data-sts="2" class="{{sts==2?'on':''}}">待发货</text>
+    <text bindtap='onStsTap' data-sts="3" class="{{sts==3?'on':''}}">待收货</text>
+    <text bindtap='onStsTap' data-sts="4" class="{{sts==4?'on':''}}">待评价</text>
+  </view>
+  <!-- end 头部菜单 -->
+  
+  <view class='main'>
+    <view class="empty" wx:if="{{list.length==0}}">
+      还没有任何相关订单
+    </view>
+    <!-- 订单列表 -->
+    <block wx:for="{{list}}" wx:key='orderId'>
+      <view class='prod-item'>
+        <view class="order-num">
+          <text>订单编号：{{item.number}}</text>
+          <view class='order-state'>
+            <text class="order-sts {{item.status=='待支付'?'red':''}} {{item.status=='已完成'?'gray':''}}">{{item.status}}</text>
+          </view>
+        </view>
+
+        <view class='item-cont' bindtap='toOrderDetailPage' data-ordernum="{{item.orderId}}">
+          <view class='prod-pic'>
+            <image src='{{item.productImage}}'></image>
+          </view>
+          <view class='prod-info'>
+            <view class='prodname'>{{item.productName}}</view>
+            <view class='prod-info-cont'>备注：{{item.memo}}</view>
+            <view class='price-nums'>
+              <text class='prodprice'><text class='symbol'>￥</text>
+              <text class='big-num'>{{item.money}}</text></text>
+              <text class="prodcount">x{{item.amount}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<wxs module="wxs" src="../../wxs/number.wxs" />

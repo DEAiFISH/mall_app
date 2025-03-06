@@ -1,0 +1,30 @@
+<!--pages/signUp/signUp.wxml-->
+<view class="container">
+  <view class="form">
+    <view class="form-item">
+      <text class="label">微信ID</text>
+      <input type="text" placeholder="请输入微信ID" bindinput="getInputVal" data-type="wxId" />
+    </view>
+    <view class="form-item">
+      <text class="label">用户名</text>
+      <input type="text" placeholder="请输入用户名" bindinput="getInputVal" data-type="nickName" />
+    </view>
+    <view class="form-item">
+      <text class="label">真实姓名</text>
+      <input type="text" placeholder="请输入真实姓名" bindinput="getInputVal" data-type="realName" />
+    </view>
+    <view class="form-item">
+      <text class="label">生日</text>
+      <input type="date" placeholder="请输入生日（格式：2025-01-01）" bindinput="getInputVal" data-type="birthday" />
+    </view>
+    <view class="form-item">
+      <text class="label">登录密码</text>
+      <input type="password" placeholder="请输入登录密码" bindinput="getInputVal" data-type="password" />
+    </view>
+    <view class="form-item">
+      <text class="label">支付密码</text>
+      <input type="password" placeholder="请输入支付密码" bindinput="getInputVal" data-type="paymentPassword" />
+    </view>
+    <button class="submit-btn" bindtap="handleSignUp">注册</button>
+  </view>
+</view>
