@@ -21,7 +21,8 @@
     "pages/news-detail/news-detail",
     "pages/coupon-center/coupon-center",
     "pages/signUp/signUp",
-    "pages/history/history"
+    "pages/history/history",
+    "pages/user-info/user-info"
   ],
   "window": {
     "backgroundTextStyle": "light",

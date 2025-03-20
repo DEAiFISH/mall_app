@@ -2,7 +2,7 @@
 <view class='container'>
   <!-- 用户信息 -->
   <view class='userinfo'>
-    <view class='userinfo-avatar'>
+    <view class='userinfo-avatar' bindtap='navigateToUserInfo'>
       <open-data type="userAvatarUrl"></open-data>
     </view>
     <view class='userinfo-name'>

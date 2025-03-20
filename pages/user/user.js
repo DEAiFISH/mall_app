@@ -1,7 +1,6 @@
 // pages/user/user.js
 
 var http = require("../../utils/http.js");
-var util = require("../../utils/util.js");
 Page({
 
   /**
@@ -203,6 +202,12 @@ Page({
     wx.navigateTo({
       url: '/pages/history/history',
     })
+  },
+
+  navigateToUserInfo: function() {
+    wx.navigateTo({
+      url: '/pages/user-info/user-info',
+    });
   },
 
 })
