@@ -1,0 +1,39 @@
+<!--pages/order-find/order-find.wxml-->
+<view class='container'>
+  <view class='main'>
+    <view class="empty" wx:if="{{list.length==0}}">
+      暂无已删除的订单
+    </view>
+    <!-- 订单列表 -->
+    <block wx:for="{{list}}" wx:key='orderId'>
+      <view class='prod-item'>
+        <view class="order-num">
+          <text>订单编号：{{item.number}}</text>
+          <view class='order-state'>
+            <text class="order-sts {{item.status=='待支付'?'red':''}} {{item.status=='已完成'?'gray':''}}">{{item.status}}</text>
+          </view>
+        </view>
+
+        <view class='item-cont'  data-ordernum="{{item.orderId}}">
+          <view class='prod-pic'>
+            <image src='{{item.productImage}}'></image>
+          </view>
+          <view class='prod-info'>
+            <view class='prodname'>{{item.productName}}</view>
+            <view class='prod-info-cont'>备注：{{item.memo}}</view>
+            <view class='price-nums'>
+              <text class='prodprice'><text class='symbol'>￥</text>
+              <text class='big-num'>{{item.money}}</text></text>
+              <text class="prodcount">x{{item.amount}}</text>
+            </view>
+          </view>
+        </view>
+        
+        <!-- 恢复订单按钮 -->
+        <view class="order-btn">
+          <button class="recover-btn" bindtap="recoverOrder" data-ordernum="{{item.orderId}}">恢复订单</button>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
