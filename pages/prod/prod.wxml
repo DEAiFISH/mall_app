@@ -53,7 +53,7 @@
       <view class="cmt-items">
         <view class="cmt-item" wx:if="{{firstComment}}" wx:key="evaluationId">
           <view class="cmt-user">
-            <view class="cmt-user-info" wx:if="!{{firstComment.isAnonymous}}">
+            <view class="cmt-user-info" wx:if="{{!firstComment.isAnonymous}}">
               <view>
                 <image class="user-img" src="{{firstComment.avatar}}"></image>
                 <view class="nickname">{{firstComment.userName}}</view>
